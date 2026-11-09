@@ -2,16 +2,20 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Author;
 use Illuminate\Database\Seeder;
 
 class AuthorSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        // My own Kagawad, created by hand (not by the factory)
+        Author::create([
+            'name'     => 'Kagawad Henri James Dillo',
+            'position' => 'Kagawad',
+            'email'    => 'kagawad.dillo@bulletin.test',
+        ]);
+
+        Author::factory()->count(4)->create();
     }
 }

@@ -10,15 +10,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AuthorFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            //
+            'name'     => fake()->name(),
+            'position' => fake()->randomElement([
+                'Kagawad', 'Barangay Secretary', 'BHW', 'Tanod', 'Treasurer',
+            ]),
+            'email'    => fake()->unique()->userName() . '@bulletin.test',
         ];
     }
 }
