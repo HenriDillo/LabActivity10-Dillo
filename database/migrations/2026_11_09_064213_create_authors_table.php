@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('position'); // e.g. Kagawad, Barangay Secretary, BHW
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
